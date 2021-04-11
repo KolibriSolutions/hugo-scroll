@@ -1,10 +1,10 @@
 {{ define "main" }}
 {{ $headless := .Site.GetPage "/homepage" }}
 {{ $sections := $headless.Resources.ByType "page" }}
-<header id="site-head" {{ with .Params.header_image }}style="background-image: url({{ . }})"{{ end }}>
+<header id="site-head">
     <div class="vertical">
         <div id="site-head-content" class="inner">
-
+            <img {{ with .Params.header_image }}src="{{.}}"{{ end }}/>
             {{ with .Params.header_headline }}<h1 class="blog-title">{{ . }}</h1>{{ end }}
             <h2 class="blog-description">
             {{ range .Params.header_subheadline }}
